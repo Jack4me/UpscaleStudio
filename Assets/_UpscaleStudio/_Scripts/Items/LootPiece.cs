@@ -1,18 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class LootPiece : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+namespace _UpscaleStudio._Scripts.Items {
+    public class LootPiece : MonoBehaviour {
+        public int countKey { get; private set; }
+        private bool _picked;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void OnTriggerEnter(Collider other){
+            PickUp();
+        }
+
+        private void PickUp(){
+            if (_picked){
+                return;
+            }
+            _picked = true;
+            UpdateUIData();
+        }
+
+        private void UpdateUIData() {
+            LootManager.Instance.Collect(this);
+        }
     }
 }

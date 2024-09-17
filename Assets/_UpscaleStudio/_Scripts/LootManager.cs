@@ -1,24 +1,29 @@
-
+using System;
+using _UpscaleStudio._Scripts.Items;
 using UnityEngine;
 
-public class LootManager : MonoBehaviour
-{
-    public static LootManager Instance { get; private set; }
+namespace _UpscaleStudio._Scripts {
+    public class LootManager : MonoBehaviour
+    {
+        public int Collected;
+        public Action ChangedAction;
 
-    private void Awake() {
-        if (Instance == null) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            Destroy(gameObject);
+        public static LootManager Instance { get; private set; }
+
+        private void Awake() {
+            if (Instance == null) {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            } else {
+                Destroy(gameObject);
+            }
         }
-    }
 
-    public void OnLootCollected(LootPiece lootPiece) {
-        // Обновляем данные о луте
-        _worldData.LootData.Collected++;
+        public void Collect(LootPiece loot){
+            Collected += loot.countKey;
+            ChangedAction?.Invoke();
+        }
+
         
-        // Вызываем обновление интерфейса через LootCounter
-        FindObjectOfType<LootCounter>().UpdateCounterText();
     }
 }
