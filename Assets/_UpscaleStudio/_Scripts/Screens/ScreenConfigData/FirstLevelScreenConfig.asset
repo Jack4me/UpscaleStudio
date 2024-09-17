@@ -15,6 +15,8 @@ MonoBehaviour:
   SceneName: FirstLevel
   screens:
   - screenPrefab: {fileID: 2222957331496745808, guid: cf20d1bc2b0ce294cb1b83222e40481f, type: 3}
-    isActiveByDefault: 1
+    isActiveByDefault: 0
   - screenPrefab: {fileID: 2222957331496745808, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}
     isActiveByDefault: 0
+  - screenPrefab: {fileID: 6321238715468507810, guid: 8fa1a6b1e675e3d4fa245631c729a402, type: 3}
+    isActiveByDefault: 1
