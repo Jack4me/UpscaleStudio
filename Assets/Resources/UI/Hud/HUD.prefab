@@ -57,7 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -125,10 +125,6 @@ PrefabInstance:
     - target: {fileID: 2222957331496745808, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}
       propertyPath: m_Name
       value: SettingsScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 2474467572171901233, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}
-      propertyPath: CloseHUDButton
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5643561841802251274, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}
       propertyPath: m_AnchorMax.x
@@ -219,8 +215,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4570224727054953329, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 923d4baafd64271478f4b4b2d66dd040, type: 3}

@@ -16,7 +16,7 @@ namespace _UpscaleStudio._Scripts.Items {
         }
 
         private void UpdateCounterText() { //CounterText.text = $"{LootManager.Instance.Collected}";
-            CounterText.text = "9";
+            CounterText.text = $"{LootManager.Instance.Collected}";
         }
     }
 }

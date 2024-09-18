@@ -20,7 +20,7 @@ namespace _UpscaleStudio._Scripts {
         }
 
         public void Collect(LootPiece loot){
-            Collected += loot.countKey;
+            Collected += loot.CountKey;
             ChangedAction?.Invoke();
         }
 

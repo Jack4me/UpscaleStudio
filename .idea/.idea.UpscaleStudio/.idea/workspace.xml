@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/TimerCounter.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,7 +67,7 @@
       <updated>1726560454370</updated>
       <workItem from="1726560459449" duration="2151000" />
       <workItem from="1726570066725" duration="5362000" />
-      <workItem from="1726650907101" duration="2038000" />
+      <workItem from="1726650907101" duration="4754000" />
     </task>
     <servers />
   </component>
