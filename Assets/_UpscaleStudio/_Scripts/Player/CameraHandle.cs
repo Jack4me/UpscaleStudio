@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UpscaleStudio._Scripts.Player {
+namespace _UpscaleStudio._Scripts.Player {
     public class CameraController : MonoBehaviour {
         public float sensitivity = 2.0f;
         public float maxYAngle = 80.0f; // Максимальный угол вращения по вертикали
@@ -9,8 +9,8 @@ namespace UpscaleStudio._Scripts.Player {
 
         private void Update() {
             // Получаем ввод от мыши
-            var mouseX = Input.GetAxis("Mouse X");
-            var mouseY = Input.GetAxis("Mouse Y");
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
             // Вращаем персонажа в горизонтальной плоскости
             transform.parent.Rotate(Vector3.up * mouseX * sensitivity);
