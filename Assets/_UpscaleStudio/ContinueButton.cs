@@ -2,9 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace _UpscaleStudio {
-    public class ContinueButton : MonoBehaviour
-    {
-
+    public class ContinueButton : MonoBehaviour {
         [SerializeField] private Button continueButton;
 
         private void Start() {
@@ -12,7 +10,8 @@ namespace _UpscaleStudio {
         }
 
         private void OnContinueGameButtonClick() {
-            throw new System.NotImplementedException();
+            PauseHandler pauseHandler = GameHandler.Instance.GetReference();
+            pauseHandler.ResumeGame();
         }
     }
 }

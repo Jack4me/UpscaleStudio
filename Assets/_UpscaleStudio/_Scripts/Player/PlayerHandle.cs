@@ -2,12 +2,12 @@ using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Player {
     public class PlayerHandle : MonoBehaviour {
-        [SerializeField] public float moveSpeed = 5.0f; 
-        [SerializeField] public float sprintSpeed = 10.0f;
+        [SerializeField] private float moveSpeed = 5.0f; 
+        [SerializeField] private float sprintSpeed = 10.0f;
+        [SerializeField] private Die die;
 
         private CharacterController controller;
         private float currentSpeed;
-
         private void Start() {
             controller = GetComponent<CharacterController>();
             currentSpeed = moveSpeed;

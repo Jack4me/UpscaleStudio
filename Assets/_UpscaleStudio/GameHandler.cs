@@ -38,5 +38,9 @@ namespace _UpscaleStudio {
 
             return false;
         }
+
+        public PauseHandler GetReference() {
+            return pauseManager;
+        }
     }
 }

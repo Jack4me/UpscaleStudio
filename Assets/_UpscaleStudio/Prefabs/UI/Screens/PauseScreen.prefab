@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 8903960686211278288}
   - component: {fileID: 1958001850558053162}
   - component: {fileID: 6774667287476509444}
+  - component: {fileID: 3351963764436700468}
   m_Layer: 5
   m_Name: PauseScreen
   m_TagString: Untagged
@@ -214,6 +215,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseHUDButton: {fileID: 4026778681000344372}
+--- !u!114 &3351963764436700468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222957331496745808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99132cea2c8b4474ea56fdebcd800018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  continueButton: {fileID: 4026778681000344372}
 --- !u!1 &4692327681373855252
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +240,7 @@ GameObject:
   - component: {fileID: 681023830992773460}
   - component: {fileID: 4937064444146273321}
   m_Layer: 5
-  m_Name: ContinueText (1)
+  m_Name: PauseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
