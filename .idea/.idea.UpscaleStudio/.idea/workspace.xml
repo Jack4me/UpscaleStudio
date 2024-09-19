@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/SoundHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_UpscaleStudio/_Scripts/Data/SoundData/SoundData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -68,7 +69,7 @@
       <workItem from="1726560459449" duration="2151000" />
       <workItem from="1726570066725" duration="5362000" />
       <workItem from="1726650907101" duration="5564000" />
-      <workItem from="1726736474072" duration="17071000" />
+      <workItem from="1726736474072" duration="17857000" />
     </task>
     <servers />
   </component>
