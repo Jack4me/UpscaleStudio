@@ -1,3 +1,4 @@
+using _UpscaleStudio._Scripts.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace UpscaleStudio._Scripts.Player.Screen {
         }
 
         private void OnOpenHUDButtonClick() {
-            ScreenManager.instance.ShowScreen(screenName);
+            ScreenHandle.instance.ShowScreen(screenName);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace _UpscaleStudio._Scripts.Screens {
 
             void Awake() {
                 // Screen register 
-                ScreenManager.instance.RegisterScreen(screenName, gameObject);
+                ScreenHandle.instance.RegisterScreen(screenName, gameObject);
                 if (gameObject.CompareTag("Menu") ) {
                     return;
                 }

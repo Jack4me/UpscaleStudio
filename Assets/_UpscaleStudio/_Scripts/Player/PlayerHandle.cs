@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace UpscaleStudio._Scripts.Player {
+namespace _UpscaleStudio._Scripts.Player {
     public class PlayerHandle : MonoBehaviour {
-        [SerializeField] public float moveSpeed = 5.0f; // Скорость движения персонажа
+        [SerializeField] public float moveSpeed = 5.0f; 
         [SerializeField] public float sprintSpeed = 10.0f;
 
         private CharacterController controller;

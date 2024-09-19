@@ -28,7 +28,7 @@ namespace _UpscaleStudio._Scripts.Items {
         }
 
         private void UpdateUIData() {
-            LootManager.Instance.Collect(this);
+            LootHandle.Instance.Collect(this);
         }
     }
 }

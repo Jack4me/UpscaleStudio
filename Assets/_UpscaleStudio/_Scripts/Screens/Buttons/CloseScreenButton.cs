@@ -1,3 +1,4 @@
+using _UpscaleStudio._Scripts.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ namespace UpscaleStudio._Scripts.Player.Screen {
 
 
       private void Start() {
-         CloseHUDButton.onClick.AddListener(ScreenManager.instance.GoBack);
+         CloseHUDButton.onClick.AddListener(ScreenHandle.instance.GoBack);
       }
 
       public void CloseWindow() {
