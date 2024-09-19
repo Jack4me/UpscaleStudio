@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundHandler : MonoBehaviour {
     public static SoundHandler Instance;
-
+    private AudioSource currentMusicSource;
     private void Awake() {
         if (Instance == null) {
             Instance = this;
