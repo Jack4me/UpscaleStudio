@@ -3,7 +3,7 @@ using UnityEngine;
 namespace _UpscaleStudio._Scripts.Player {
     public class CameraController : MonoBehaviour {
         public float sensitivity = 2.0f;
-        public float maxYAngle = 80.0f; // Максимальный угол вращения по вертикали
+        public float maxYAngle = 80.0f; 
 
         private float rotationX;
 

@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 namespace _UpscaleStudio._Scripts.Screens {
     public class ScreenHandle : MonoBehaviour {
         public static ScreenHandle instance;
+        [SerializeField] private ScreenConfig[] screenConfigs;
         private Stack<GameObject> screenHistory = new Stack<GameObject>();
         private Dictionary<string, GameObject> screenRegistry = new Dictionary<string, GameObject>();
-        [SerializeField] private ScreenConfig[] screenConfigs;
-
+        private bool isPauseScreenActive = false; 
         private GameObject HUDInstance;
 
         private void Awake() {
@@ -27,15 +27,30 @@ namespace _UpscaleStudio._Scripts.Screens {
         }
 
         private void Update() {
-            if (GameHandler.Instance.IsPaused()) {
+            ActivatePause();
+        }
+
+        private void ActivatePause() {
+            if (GameHandler.Instance.IsPaused() && !isPauseScreenActive) {
+                ShowScreen("PauseScreen");
+                isPauseScreenActive = true;
+            }
+
+            else if (!GameHandler.Instance.IsPaused() && isPauseScreenActive) {
+                GoBack();
+                GameObject screenLoot = screenRegistry["Loot"];
+                screenLoot.SetActive(true);
+                GameObject screenTimer = screenRegistry["Timer"];
+                screenTimer.SetActive(true);
+                isPauseScreenActive = false;
             }
         }
 
-        void OnDestroy() {
+        private void OnDestroy() {
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
-        void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
             LoadScreensForScene(scene.name);
         }
 
@@ -122,17 +137,6 @@ namespace _UpscaleStudio._Scripts.Screens {
         private void HideAllScreens() {
             foreach (var screen in screenRegistry.Values) {
                 screen.SetActive(false);
-            }
-        }
-
-        public void DebugRegisteredScreens() {
-            if (screenRegistry.Count > 0) {
-                foreach (var entry in screenRegistry) {
-                    Debug.Log("Registered screen: " + entry.Key + ", Object: " + entry.Value.name);
-                }
-            }
-            else {
-                Debug.Log("No screens registered in the registry.");
             }
         }
     }

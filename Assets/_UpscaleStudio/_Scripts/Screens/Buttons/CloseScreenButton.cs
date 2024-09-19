@@ -1,10 +1,8 @@
-using _UpscaleStudio._Scripts.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UpscaleStudio._Scripts.Player.Screen {
+namespace _UpscaleStudio._Scripts.Screens.Buttons {
    public class CloseButton : MonoBehaviour {
-      public GameObject window; 
       public Button CloseHUDButton;
 
 
@@ -12,8 +10,6 @@ namespace UpscaleStudio._Scripts.Player.Screen {
          CloseHUDButton.onClick.AddListener(ScreenHandle.instance.GoBack);
       }
 
-      public void CloseWindow() {
-         window.SetActive(false);
-      }
+      
    }
 }

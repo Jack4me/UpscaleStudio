@@ -22,3 +22,5 @@ MonoBehaviour:
     isActiveByDefault: 1
   - screenPrefab: {fileID: 8525047807932434549, guid: 97be2b742c9eae847be3f3244e4de0c9, type: 3}
     isActiveByDefault: 1
+  - screenPrefab: {fileID: 2222957331496745808, guid: b06e32136cd90c941809a25df09fa157, type: 3}
+    isActiveByDefault: 0

@@ -1,8 +1,7 @@
-using _UpscaleStudio._Scripts.Screens;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UpscaleStudio._Scripts.Player.Screen {
+namespace _UpscaleStudio._Scripts.Screens.Buttons {
     public class OpenScreen : MonoBehaviour {
         [SerializeField] private string screenName;
         [SerializeField] private Button OpenWindowButton;

@@ -259,8 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a05804195bbacc348936ee62497aa472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  window: {fileID: 2222957331496745808}
-  CloseHUDButton: {fileID: 0}
+  CloseHUDButton: {fileID: 3962219413505398118}
 --- !u!114 &8903960686211278288
 MonoBehaviour:
   m_ObjectHideFlags: 0

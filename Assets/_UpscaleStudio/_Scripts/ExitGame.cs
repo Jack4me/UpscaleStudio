@@ -1,19 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExitGame : MonoBehaviour {
-    [SerializeField] private Button ExitGameButton;
+namespace _UpscaleStudio._Scripts {
+    public class ExitGame : MonoBehaviour {
+        [SerializeField] private Button ExitGameButton;
 
-    private void Start() {
-        ExitGameButton.onClick.AddListener(OnExitGameButtonClick);
-    }
+        private void Start() {
+            ExitGameButton.onClick.AddListener(OnExitGameButtonClick);
+        }
 
-    private void OnExitGameButtonClick() {
-        Debug.Log("Exiting Game...");
-        Application.Quit();
+        private void OnExitGameButtonClick() {
+            Debug.Log("Exiting Game...");
+            Application.Quit();
 
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
     }
 }
