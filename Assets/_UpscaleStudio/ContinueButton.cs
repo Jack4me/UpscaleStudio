@@ -10,7 +10,7 @@ namespace _UpscaleStudio {
         }
 
         private void OnContinueGameButtonClick() {
-            PauseHandler pauseHandler = GameHandler.Instance.GetReference();
+            PauseHandler pauseHandler = GameHandler.Instance.GetPause();
             pauseHandler.ResumeGame();
         }
     }

@@ -1,18 +1,19 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class RestartButton : MonoBehaviour {
-    [SerializeField] private Button restartButton;
+namespace _UpscaleStudio {
+    public class RestartButton : MonoBehaviour {
+        [SerializeField] private Button restartButton;
 
-    void Start() {
-        restartButton.onClick.AddListener(RestartGame);
-    }
+        void Start() {
+            restartButton.onClick.AddListener(RestartGame);
+        }
 
 
-    public void RestartGame() {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        public void RestartGame() {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

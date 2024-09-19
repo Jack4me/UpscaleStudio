@@ -39,7 +39,7 @@ namespace _UpscaleStudio {
             return false;
         }
 
-        public PauseHandler GetReference() {
+        public PauseHandler GetPause() {
             return pauseManager;
         }
     }
