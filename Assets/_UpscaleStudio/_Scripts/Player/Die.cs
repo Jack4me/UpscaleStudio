@@ -1,10 +1,9 @@
 using _UpscaleStudio._Scripts.Screens;
 using UnityEngine;
 
-namespace _UpscaleStudio {
+namespace _UpscaleStudio._Scripts.Player {
     public class Die : MonoBehaviour {
         public void HandleDeath() {
-            PauseHandler pause = GameHandler.Instance.GetPause();
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

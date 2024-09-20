@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Level1MusicData
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: e22353db88dbb714ba9016054fe39d19, type: 3}
-  volume: 1
+  volume: 0.5
   loop: 1
   is3D: 0

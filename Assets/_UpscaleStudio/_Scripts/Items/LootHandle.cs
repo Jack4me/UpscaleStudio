@@ -1,4 +1,5 @@
 using System;
+using _UpscaleStudio._Scripts.Data.SoundData;
 using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Items {
@@ -6,6 +7,7 @@ namespace _UpscaleStudio._Scripts.Items {
     {
         public int Collected;
         public Action ChangedAction;
+        [SerializeField] private SoundData keySound;
 
         public static LootHandle Instance { get; private set; }
 
@@ -21,6 +23,7 @@ namespace _UpscaleStudio._Scripts.Items {
         public void Collect(LootPiece loot){
             Collected += loot.CountKey;
             ChangedAction?.Invoke();
+            SoundHandler.Instance.PlaySound(keySound, transform.position, gameObject);
             
         }
 

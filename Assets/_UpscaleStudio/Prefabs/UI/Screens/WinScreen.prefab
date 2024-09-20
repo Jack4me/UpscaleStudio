@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8ade4f280defb246a778204829a8d42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenName: GameOverScreen
+  screenName: WinScreen
 --- !u!114 &7892302951327283984
 MonoBehaviour:
   m_ObjectHideFlags: 0

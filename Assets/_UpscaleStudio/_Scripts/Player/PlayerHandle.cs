@@ -73,7 +73,7 @@ namespace _UpscaleStudio._Scripts.Player {
                 }
 
                 if (Input.GetKey(KeyCode.LeftShift)) {
-                    SoundHandler.Instance.SetSoundSpeed(gameObject, 2.0f); 
+                    SoundHandler.Instance.SetSoundSpeed(gameObject, 1.5f); 
                 } else {
                     SoundHandler.Instance.SetSoundSpeed(gameObject, 1.0f); 
                 }

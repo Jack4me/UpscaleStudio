@@ -69,7 +69,33 @@ namespace _UpscaleStudio._Scripts {
                 Destroy(source.gameObject, soundData.audioClip.length);
             }
         }
+        public void PauseAllSounds() {
+            // Pause all currently active sounds
+            foreach (var sound in activeSounds.Values) {
+                sound.Pause();
+            }
+            if (musicSource.isPlaying) {
+                musicSource.Pause(); // Pause the music as well
+            }
+        }
 
+        public void ResumeAllSounds() {
+            // Resume all currently paused sounds
+            foreach (var sound in activeSounds.Values) {
+                sound.UnPause();
+            }
+            if (musicSource.clip != null) {
+                musicSource.UnPause(); // Resume the music
+            }
+        }
+
+        public void StopAllSounds() {
+            // Stop all active sounds
+            foreach (var sound in activeSounds.Values) {
+                sound.Stop();
+            }
+            activeSounds.Clear();
+        }
         public void StopSound(SoundData soundData, GameObject attachedObject) {
             // Stop a sound effect associated with a game object
             if (attachedObject != null && activeSounds.ContainsKey(attachedObject)) {
