@@ -98,8 +98,8 @@ namespace _UpscaleStudio._Scripts {
             PlayMusic(newMusic);
         }
 
-        public void SetSoundSpeed(SoundData soundData, GameObject sourceGameObject, float speed) {
-            AudioSource audioSource = sourceGameObject.GetComponent<AudioSource>();
+        public void SetSoundSpeed(GameObject sourceGameObject, float speed) {
+            AudioSource audioSource = sourceGameObject.GetComponentInChildren<AudioSource>();
             if (audioSource != null) {
                 audioSource.pitch = speed;
             }

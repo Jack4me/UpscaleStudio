@@ -8,7 +8,6 @@ namespace _UpscaleStudio._Scripts.Player {
         [SerializeField] private float moveSpeed = 5.0f; 
         [SerializeField] private float sprintSpeed = 10.0f;
         [SerializeField] private Die die;
-        [Header("Audio Settings")]
         [SerializeField] private SoundData footstepsSound;
         private CharacterController controller;
         private float currentSpeed;
@@ -74,9 +73,9 @@ namespace _UpscaleStudio._Scripts.Player {
                 }
 
                 if (Input.GetKey(KeyCode.LeftShift)) {
-                    SoundHandler.Instance.SetSoundSpeed(footstepsSound, gameObject, 2.0f);
+                    SoundHandler.Instance.SetSoundSpeed(gameObject, 2.0f); 
                 } else {
-                    SoundHandler.Instance.SetSoundSpeed(footstepsSound, gameObject, 1.0f); 
+                    SoundHandler.Instance.SetSoundSpeed(gameObject, 1.0f); 
                 }
             } else if (wasMoving) {
                 SoundHandler.Instance.StopSound(footstepsSound, gameObject);
