@@ -208,7 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3092097341850550145}
   - component: {fileID: 3840729973361913309}
-  - component: {fileID: 6232666159938052607}
+  - component: {fileID: 8023752788731331783}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenName: SettingsScreen
---- !u!114 &6232666159938052607
+--- !u!114 &8023752788731331783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,10 +259,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5766223204392809309}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ab45a8af25673147a9aae6f079a1ed8, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d4718a45993ac04b8fc4b977cf54331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartButton: {fileID: 8656088969175457131}
+  sceneToLoad: 3
+  openWindowButton: {fileID: 8656088969175457131}
 --- !u!1 &6713202451704772988
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +276,7 @@ GameObject:
   - component: {fileID: 953866192444520664}
   - component: {fileID: 1211932058897348997}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: RestarnText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

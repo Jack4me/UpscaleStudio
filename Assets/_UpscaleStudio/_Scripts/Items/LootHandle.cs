@@ -19,7 +19,10 @@ namespace _UpscaleStudio._Scripts.Items {
                 Destroy(gameObject);
             }
         }
-
+        public void ResetCollectedKeys() {
+            Collected = 0; // Сбрасываем количество ключей
+            ChangedAction?.Invoke(); // Обновляем UI или другие зависимости
+        }
         public void Collect(LootPiece loot){
             Collected += loot.CountKey;
             ChangedAction?.Invoke();

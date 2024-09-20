@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Player {
     public class PlayerHandle : MonoBehaviour {
-        private const float Gravity = 9.81f;
+        public CameraController playerCamera;
 
         [SerializeField] private float moveSpeed = 5.0f; 
         [SerializeField] private float sprintSpeed = 10.0f;
         [SerializeField] private Die die;
         [SerializeField] private SoundData footstepsSound;
         private CharacterController controller;
+        private const float Gravity = 9.81f;
         private float currentSpeed;
         private bool isMoving = false;
         private void Start() {
