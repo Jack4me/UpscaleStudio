@@ -1,4 +1,5 @@
 using _UpscaleStudio._Scripts.Data.SoundData;
+using _UpscaleStudio._Scripts.System.Handlers;
 using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Player {

@@ -3,7 +3,7 @@ using _UpscaleStudio._Scripts.Data.SoundData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _UpscaleStudio._Scripts {
+namespace _UpscaleStudio._Scripts.System.Handlers {
     public class SoundHandler : MonoBehaviour {
         public static SoundHandler Instance;
 
@@ -109,10 +109,13 @@ namespace _UpscaleStudio._Scripts {
                 }
             }
         }
-
+        // Play background music
         public void PlayMusic(SoundData soundData) {
-            // Play background music
-            if (currentMusicData == soundData) return; // Avoid restarting the same music
+           
+            if (currentMusicData == soundData && musicSource.isPlaying) {
+                return; 
+            }
+           
 
             currentMusicData = soundData;
             musicSource.clip = soundData.audioClip;
@@ -140,6 +143,9 @@ namespace _UpscaleStudio._Scripts {
             if (audioSource != null) {
                 audioSource.pitch = speed;
             }
+        }
+        public void PlayFirstLevelMusic() {
+            ChangeMusic(firstLevelMusicData);
         }
     }
 }
