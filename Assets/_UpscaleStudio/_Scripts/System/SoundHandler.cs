@@ -7,66 +7,71 @@ namespace _UpscaleStudio._Scripts {
     public class SoundHandler : MonoBehaviour {
         public static SoundHandler Instance;
 
-        [SerializeField] private SoundData mainMusicData;
-        [SerializeField] private SoundData firstLevelMusicData;
-        private SoundData currentMusicData;
-        private AudioSource musicSource;
-
-        // Словарь для хранения активных аудиосорсов по объекту
-        private Dictionary<GameObject, AudioSource> activeSounds = new Dictionary<GameObject, AudioSource>();
+        [SerializeField] private SoundData mainMusicData; 
+        [SerializeField] private SoundData firstLevelMusicData; 
+        private SoundData currentMusicData; 
+        private AudioSource musicSource; 
+        private Dictionary<GameObject, AudioSource> activeSounds = new Dictionary<GameObject, AudioSource>(); 
 
         private void Awake() {
+            // Singleton pattern to ensure only one instance exists
             if (Instance == null) {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(gameObject); 
                 InitializeMusicSource();
-            }
-            else {
-                Destroy(gameObject);
+            } else {
+                Destroy(gameObject); 
             }
 
+            // Subscribe to scene loaded event
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         private void OnDestroy() {
+            // Unsubscribe from the scene loaded event
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+            // Play appropriate music based on the loaded scene
             if (scene.name == "MainMenu") {
                 PlayMusic(mainMusicData);
-            }
-            else if (scene.name == "FirstLevel") {
+            } else if (scene.name == "FirstLevel") {
                 ChangeMusic(firstLevelMusicData);
             }
         }
 
         private void InitializeMusicSource() {
+            // Initialize the AudioSource for music playback
             musicSource = gameObject.AddComponent<AudioSource>();
-            musicSource.loop = true;
-            musicSource.playOnAwake = false;
+            musicSource.loop = true; 
+            musicSource.playOnAwake = false; 
         }
 
         public void PlaySound(SoundData soundData, Vector3 position = default, GameObject attachedObject = null) {
+            // Play a sound effect at a specified position
             AudioSource source = new GameObject("Audio").AddComponent<AudioSource>();
             source.clip = soundData.audioClip;
             source.volume = soundData.volume;
             source.loop = soundData.loop;
-            source.spatialBlend = soundData.is3D ? 1f : 0f; // 3D or 2D sound
+            source.spatialBlend = soundData.is3D ? 1f : 0f; // Set to 3D or 2D sound
 
             if (attachedObject != null) {
-                source.transform.parent = attachedObject.transform; // Sound attached to the object
-                activeSounds[attachedObject] = source; // Добавляем в словарь
+                // Attach sound source to a game object
+                source.transform.parent = attachedObject.transform; 
+                activeSounds[attachedObject] = source; // Track the sound source
             }
 
             source.Play();
 
+            // Destroy sound source after playback if not looping
             if (!soundData.loop) {
                 Destroy(source.gameObject, soundData.audioClip.length);
             }
         }
 
         public void StopSound(SoundData soundData, GameObject attachedObject) {
+            // Stop a sound effect associated with a game object
             if (attachedObject != null && activeSounds.ContainsKey(attachedObject)) {
                 AudioSource source = activeSounds[attachedObject];
                 if (source.clip == soundData.audioClip) {
@@ -78,6 +83,7 @@ namespace _UpscaleStudio._Scripts {
         }
 
         public void PlayMusic(SoundData soundData) {
+            // Play background music
             if (currentMusicData == soundData) return; // Avoid restarting the same music
 
             currentMusicData = soundData;
@@ -88,17 +94,20 @@ namespace _UpscaleStudio._Scripts {
         }
 
         public void StopMusic() {
+            // Stop currently playing background music
             if (musicSource.isPlaying) {
                 musicSource.Stop();
             }
         }
 
         public void ChangeMusic(SoundData newMusic) {
+            // Change background music to a new track
             StopMusic();
             PlayMusic(newMusic);
         }
 
         public void SetSoundSpeed(GameObject sourceGameObject, float speed) {
+            // Set the playback speed (pitch) of a sound source
             AudioSource audioSource = sourceGameObject.GetComponentInChildren<AudioSource>();
             if (audioSource != null) {
                 audioSource.pitch = speed;

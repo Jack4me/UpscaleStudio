@@ -1,8 +1,7 @@
 using System;
-using _UpscaleStudio._Scripts.Items;
 using UnityEngine;
 
-namespace _UpscaleStudio._Scripts {
+namespace _UpscaleStudio._Scripts.Items {
     public class LootHandle : MonoBehaviour
     {
         public int Collected;
@@ -22,6 +21,7 @@ namespace _UpscaleStudio._Scripts {
         public void Collect(LootPiece loot){
             Collected += loot.CountKey;
             ChangedAction?.Invoke();
+            
         }
 
         
