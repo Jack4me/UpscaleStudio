@@ -24,7 +24,7 @@ namespace _UpscaleStudio._Scripts.Player {
             
         }
         private void OnTriggerEnter(Collider other) {
-            if (other.TryGetComponent(out Enemy enemy)) {
+            if (other.TryGetComponent(out Enemy.Enemy enemy)) {
                 die.HandleDeath();
             }
         }

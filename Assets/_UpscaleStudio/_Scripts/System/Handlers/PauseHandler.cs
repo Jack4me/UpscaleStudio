@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _UpscaleStudio._Scripts.System {
+namespace _UpscaleStudio._Scripts.System.Handlers {
     public class PauseHandler : MonoBehaviour {
         private bool isPaused = false;
 
