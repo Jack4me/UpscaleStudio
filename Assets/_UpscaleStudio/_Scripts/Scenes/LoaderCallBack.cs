@@ -1,7 +1,6 @@
 using UnityEngine;
-using UpscaleStudio._Scripts.Player.Screen.Scene;
 
-namespace UpscaleStudio._Scripts.Player.Screen {
+namespace _UpscaleStudio._Scripts.Scenes {
     public class LoaderCallBack : MonoBehaviour {
         private bool IsFirstUpdate = true;
 

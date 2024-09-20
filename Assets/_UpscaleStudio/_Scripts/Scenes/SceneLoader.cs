@@ -1,5 +1,4 @@
 using UnityEngine;
-using UpscaleStudio._Scripts.Player.Screen.Scene;
 
 namespace _UpscaleStudio._Scripts.Scenes {
     public class SceneLoader : MonoBehaviour {

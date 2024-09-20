@@ -1,14 +1,12 @@
-using _UpscaleStudio._Scripts.Scenes;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UpscaleStudio._Scripts.Player.Screen.Scene {
+namespace _UpscaleStudio._Scripts.Scenes {
     public class OpenScene : MonoBehaviour {
         [SerializeField] private SceneHandler.SceneType sceneToLoad;
         [SerializeField] private Button openWindowButton;
 
 
-   
         private SceneLoader sceneLoader;
 
         private void Start() {
@@ -18,6 +16,7 @@ namespace UpscaleStudio._Scripts.Player.Screen.Scene {
                 Debug.LogError("SceneLoader не найден на сцене!");
                 return;
             }
+
             openWindowButton.onClick.AddListener(() => sceneLoader.LoadScene(sceneToLoad));
         }
     }

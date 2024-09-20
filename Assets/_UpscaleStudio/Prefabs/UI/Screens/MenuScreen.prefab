@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4718a45993ac04b8fc4b977cf54331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 5
+  sceneToLoad: 3
   openWindowButton: {fileID: 1850732321429513666}
 --- !u!1001 &2005308911323819481
 PrefabInstance:

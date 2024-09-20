@@ -30,6 +30,10 @@ namespace _UpscaleStudio._Scripts.Screens {
             ActivatePause();
         }
 
+        private void OnDestroy() {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
         private void ActivatePause() {
             if (GameHandler.Instance.IsPaused() && !isPauseScreenActive) {
                 ShowScreen("PauseScreen");
@@ -44,10 +48,6 @@ namespace _UpscaleStudio._Scripts.Screens {
                 screenTimer.SetActive(true);
                 isPauseScreenActive = false;
             }
-        }
-
-        private void OnDestroy() {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {

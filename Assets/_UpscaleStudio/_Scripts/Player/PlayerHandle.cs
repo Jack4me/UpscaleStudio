@@ -1,17 +1,18 @@
+using _UpscaleStudio._Scripts.Data.SoundData;
 using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Player {
     public class PlayerHandle : MonoBehaviour {
         private const float Gravity = 9.81f;
-        private const float SprintMultiplier = 2.0f;
 
         [SerializeField] private float moveSpeed = 5.0f; 
         [SerializeField] private float sprintSpeed = 10.0f;
         [SerializeField] private Die die;
-
+        [Header("Audio Settings")]
+        [SerializeField] private SoundData footstepsSound;
         private CharacterController controller;
         private float currentSpeed;
-
+        private bool isMoving = false;
         private void Start() {
             InitializeComponents();
             ConfigureCursor();
@@ -38,10 +39,14 @@ namespace _UpscaleStudio._Scripts.Player {
 
         private void HandleMovement() {
             Vector3 moveDirection = GetInputMovement();
+            bool wasMoving = isMoving;
+            isMoving = moveDirection.magnitude > 0.1f; 
             ApplyGravity(ref moveDirection);
             UpdateSpeed();
 
             controller.Move(moveDirection * currentSpeed * Time.deltaTime);
+            
+            HandleFootsteps(wasMoving);
         }
 
         private Vector3 GetInputMovement() {
@@ -60,6 +65,21 @@ namespace _UpscaleStudio._Scripts.Player {
                 currentSpeed = sprintSpeed;
             } else {
                 currentSpeed = moveSpeed;
+            }
+        }
+        private void HandleFootsteps(bool wasMoving) {
+            if (isMoving) {
+                if (!wasMoving) {
+                    SoundHandler.Instance.PlaySound(footstepsSound, transform.position, gameObject);
+                }
+
+                if (Input.GetKey(KeyCode.LeftShift)) {
+                    SoundHandler.Instance.SetSoundSpeed(footstepsSound, gameObject, 2.0f);
+                } else {
+                    SoundHandler.Instance.SetSoundSpeed(footstepsSound, gameObject, 1.0f); 
+                }
+            } else if (wasMoving) {
+                SoundHandler.Instance.StopSound(footstepsSound, gameObject);
             }
         }
     }

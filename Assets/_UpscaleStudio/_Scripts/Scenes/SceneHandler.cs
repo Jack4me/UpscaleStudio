@@ -1,15 +1,12 @@
 using System;
 
-namespace UpscaleStudio._Scripts.Player.Screen.Scene {
+namespace _UpscaleStudio._Scripts.Scenes {
     public static class SceneHandler {
         public enum SceneType { 
             Loading,
             MainMenu,
             Preferences,
-            ChooseLevel,
-            Shop,
             FirstLevel,
-            SecondLevel,
 
         }
         

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UpscaleStudio._Scripts.Player.Screen;
 
 namespace _UpscaleStudio._Scripts.Screens {
     public class ScreenInitializer : MonoBehaviour

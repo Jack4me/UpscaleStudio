@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 3876d0e183013044aab5adba683217d7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.09181083, g: 0.09337396, b: 0.1518588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -296,7 +296,6 @@ GameObject:
   - component: {fileID: 532264924}
   - component: {fileID: 532264927}
   - component: {fileID: 532264928}
-  - component: {fileID: 532264929}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -371,18 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d810483e53e1c5a41b96254669499a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &532264929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532264923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b5f8fee27126f46b07d0a72fb5fad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &777336554
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +381,7 @@ GameObject:
   - component: {fileID: 777336556}
   - component: {fileID: 777336555}
   m_Layer: 0
-  m_Name: MenuMusic
+  m_Name: SoundHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,6 +399,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b5f8fee27126f46b07d0a72fb5fad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMusicData: {fileID: 11400000, guid: 1b7f64240beb40e4fa2a34e5e2e0a768, type: 2}
+  firstLevelMusicData: {fileID: 11400000, guid: e4d6886313160a74ea567a0f2aa6b5bc, type: 2}
 --- !u!4 &777336556
 Transform:
   m_ObjectHideFlags: 0
@@ -465,7 +454,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2

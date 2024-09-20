@@ -1,6 +1,6 @@
+using _UpscaleStudio._Scripts.Scenes;
 using UnityEngine;
 using UnityEngine.UI;
-using UpscaleStudio._Scripts.Player.Screen.Scene;
 
 namespace CodeBase.ScreenManager {
     public class BackButton : MonoBehaviour
