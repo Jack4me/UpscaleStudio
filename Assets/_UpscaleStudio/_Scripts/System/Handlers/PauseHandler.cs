@@ -11,6 +11,7 @@ namespace _UpscaleStudio._Scripts.System.Handlers {
                 isPaused = true;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+
                 Debug.Log("Game Paused");
             }
         }
@@ -23,6 +24,7 @@ namespace _UpscaleStudio._Scripts.System.Handlers {
                 Debug.Log("Game Resumed");
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+
             }
         }
 
