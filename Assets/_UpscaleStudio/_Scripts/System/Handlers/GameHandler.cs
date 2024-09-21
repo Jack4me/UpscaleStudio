@@ -1,48 +1,51 @@
-using _UpscaleStudio._Scripts.System;
-using _UpscaleStudio._Scripts.System.Handlers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _UpscaleStudio {
+namespace _UpscaleStudio._Scripts.System.Handlers {
     public class GameHandler : MonoBehaviour {
-        [SerializeField] PauseHandler pauseManager; // Ссылка на PauseManager
-        public static GameHandler Instance;
+        [SerializeField] private PauseHandler pauseHandler; // Reference to the PauseHandler
+        public static GameHandler Instance; // Singleton instance
 
-        void Awake() {
+        // Awake method to implement the Singleton pattern
+        private void Awake() {
             if (Instance != null) {
-                Destroy(gameObject);
-            }
-            else {
+                Destroy(gameObject); // Destroy duplicate instance
+            } else {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(gameObject); // Keep GameHandler across scenes
             }
         }
 
-
-        void Update() {
+        // Update method to handle pause toggle
+        private void Update() {
             if (Input.GetKeyDown(KeyCode.Escape) && IsPauseScene()) {
-                pauseManager.TogglePause();
+                pauseHandler.TogglePause(); // Toggle pause when "Escape" key is pressed in the correct scene
             }
         }
 
-        // Method to check scene for Active Pause
+        // Method to check if the current scene supports pause functionality
         public bool IsPauseScene() {
             string currentScene = SceneManager.GetActiveScene().name;
 
-            // Указываем, в каких сценах должна быть пауза
-            return currentScene == "FirstLevel"; // Замени "SecondScene" на нужную сцену
+            // Specify which scenes should support pausing
+            return currentScene == "FirstLevel"; // Replace with the scene where pause is allowed
         }
 
+        // Method to check if the game is currently paused
         public bool IsPaused() {
-            if (pauseManager != null) {
-                return pauseManager.IsPaused();
+            if (pauseHandler != null) {
+                return pauseHandler.IsPaused(); // Return pause status from PauseHandler
             }
 
             return false;
         }
 
+        // Getter to access the PauseHandler instance
+    
+
+
         public PauseHandler GetPause() {
-            return pauseManager;
+            return pauseHandler;
         }
     }
 }

@@ -147,5 +147,19 @@ namespace _UpscaleStudio._Scripts.System.Handlers {
         public void PlayFirstLevelMusic() {
             ChangeMusic(firstLevelMusicData);
         }
+        [SerializeField] private float masterVolume = 1f; 
+
+        public void SetMasterVolume(float volume) {
+            masterVolume = volume;
+            musicSource.volume = volume; 
+
+            foreach (var sound in activeSounds.Values) {
+                sound.volume = volume; 
+            }
+        }
+        public float GetMasterVolume()
+        {
+            return masterVolume; 
+        }
     }
 }

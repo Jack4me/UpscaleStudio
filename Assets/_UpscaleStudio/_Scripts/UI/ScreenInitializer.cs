@@ -1,3 +1,4 @@
+using _UpscaleStudio._Scripts.UI;
 using UnityEngine;
 
 namespace _UpscaleStudio._Scripts.Screens {

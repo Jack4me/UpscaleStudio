@@ -1,3 +1,4 @@
+using _UpscaleStudio._Scripts.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
